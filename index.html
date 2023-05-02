@@ -6,6 +6,7 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="cache-control" content="max-age=604800">
   <title>INDEX</title>
   <style>
     html,
@@ -26,14 +27,10 @@
     body {
       font-family: monospace;
       font-size: 14px;
-      line-height: 1.3;
+      line-height: 1.2;
       margin: 0;
       min-height: 100%;
       overflow-wrap: break-word;
-    }
-
-    .post-meta {
-      text-align: right;
     }
 
     h2,
@@ -44,81 +41,10 @@
       margin-top: 3rem;
     }
 
-    hr {
-      margin: 2rem 0;
-    }
-
-    p {
-      margin: 1rem 0;
-    }
-
-    li {
-      margin: 0.4rem 0;
-    }
-
-    *:target {
-      background: yellow;
-    }
-
     .w {
       max-width: 640px;
       margin: 0 auto;
       padding: 4rem 2rem;
-    }
-
-    hr {
-      text-align: center;
-      border: 0;
-    }
-
-    hr:before {
-      content: "/////";
-    }
-
-    hr:after {
-      content: attr(data-content) "/////";
-    }
-
-    pre {
-      background: black;
-      padding: 1em;
-      overflow-x: auto;
-    }
-
-    table {
-      width: 100%;
-    }
-
-    table,
-    th,
-    td {
-      border: thin solid black;
-      border-collapse: collapse;
-      padding: 0.4rem;
-    }
-
-    code {
-      color: white;
-      background: black;
-      font-size: 80%;
-      padding: 0.1em 0.2em;
-    }
-
-    code.has-jax {
-      -webkit-font-smoothing: antialiased;
-      background: inherit !important;
-      border: none !important;
-      font-size: 100%;
-    }
-
-    blockquote {
-      font-style: italic;
-      border: thin solid black;
-      padding: 1rem;
-    }
-
-    blockquote p {
-      margin: 0;
     }
 
     img {
@@ -128,10 +54,22 @@
       margin: auto;
     }
   </style>
+  <script>
+    function displayTime() {
+      offset = 5.5; // just change the off set IE the UTC offset of your country and everything should work just fine.
+      d = new Date();
+      utc = d.getTime() + (d.getTimezoneOffset() * 60000);
+      nd = new Date(utc + (3600000 * offset));
+      hours = nd.getHours().toString().padStart(2, '0');
+      minutes = nd.getMinutes().toString().padStart(2, '0');
+      seconds = nd.getSeconds().toString().padStart(2, '0');
+      document.getElementById("time").innerHTML = hours + ":" + minutes + ":" + seconds;
+    }
+    setInterval(displayTime, 1000);
+  </script>
 </head>
 
 <body a="auto">
-  <audio src="rain.m4a" autoplay loop volume="0.05"></audio>
   <main class="page-content" aria-label="Content">
     <div class="w">
 
@@ -140,9 +78,8 @@
       </header>
       <center>
         <h1>AHHHH!! <del>SHIT</del> HERE WE GO AGAIN</h1>
-      </center>
-      <p><img src="https://iamb4uc.xyz/img/wp.gif" alt="A Gif"></p>
-      <center>
+        <p><img src="https://iamb4uc.xyz/img/wp.gif" alt="A Gif"></p>
+        <p><em>The current time in India: <span id="time"></span></em></p>
         <form method="post" action="https://searx.be/">
           <label for="search">Search:</label>
           <input type="text" id="search" name="q" placeholder="Enter search terms" required>
@@ -154,6 +91,11 @@
           <a href="https://iamb4uc.xyz/">Website</a>&nbsp;
           <a href="https://voidlinux.org/">Void Linux</a>&nbsp;
           <a href="https://old.reddit.com/">Reddit</a>&nbsp;
+          <a href="https://wttr.in/">Weather</a>&nbsp;
+        </p>
+        <p>
+          <a href="https://fsf.org">FSF</a>&nbsp;
+          <a href="https://tor.org">TOR</a>&nbsp;
         </p>
       </center>
     </div>
